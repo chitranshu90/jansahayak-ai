@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f9fc">
+  <meta name="description" content="An independent prototype to explore government schemes and prepare your next steps.">
+  <title>JanSahayak AI | Scheme Navigator</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="JanSahayak AI home">
+      <span class="brand-mark" aria-hidden="true">JS</span>
+      <span>JanSahayak <strong>AI</strong><small data-i18n="prototype">Independent prototype</small></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#explore" data-i18n="navExplore">Explore schemes</a>
+      <a href="#assistant" data-i18n="navAssistant">Ask assistant</a>
+      <a href="#dashboard" data-i18n="navDashboard">My dashboard</a>
+      <a href="#services" data-i18n="navServices">Citizen tools</a>
+      <a href="#how" data-i18n="navHow">How it works</a>
+    </nav>
+    <label class="language-control" for="language"><span data-i18n="language">Language</span>
+      <select id="language" aria-label="Assistant language">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+      </select>
+    </label>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="status-dot"></span><span data-i18n="heroEyebrow">A clearer path to public benefits</span></span>
+        <h1><span data-i18n="heroTitle1">Sarkari Yojana Samjho,</span><br><span data-i18n="heroTitle2">Apna Agla Kadam Jaano.</span></h1>
+        <p data-i18n="heroDescription">Explore scheme information, understand what is known, and plan what to check next—with official sources always in reach.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#assistant"><span data-i18n="askAssistant">Ask the assistant</span> <span aria-hidden="true">→</span></a>
+          <a class="button button-secondary" href="#explore" data-i18n="browseSchemes">Browse schemes</a>
+        </div>
+        <p class="prototype-note" data-i18n="independentNotice">Independent prototype — not an official government portal. Scheme information may be incomplete.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="art-card art-main"><span class="art-icon">✓</span><strong data-i18n="artFind">Find a relevant scheme</strong><small data-i18n="artStart">Start with what matters to you</small></div>
+        <div class="art-card art-source"><span class="source-icon">↗</span><span><strong data-i18n="artSource">Source-backed</strong><small data-i18n="artOfficial">Official links included</small></span></div>
+        <div class="art-card art-step"><span class="step-number">02</span><span><strong data-i18n="artPlan">Plan your next step</strong><small data-i18n="artPace">At your own pace</small></span></div>
+        <div class="art-sun"></div>
+      </div>
+    </section>
+
+    <section class="category-section content-width" aria-labelledby="category-title">
+      <div class="section-heading compact-heading">
+        <div><span class="eyebrow" data-i18n="categoryEyebrow">START WITH YOUR NEED</span><h2 id="category-title" data-i18n="categoryTitle">What are you looking for?</h2></div>
+        <a href="#explore" class="text-link"><span data-i18n="viewAll">View all schemes</span> <span aria-hidden="true">→</span></a>
+      </div>
+      <div id="category-grid" class="category-grid">
+        <button class="category-card" data-category="Education"><span>✦</span><strong data-i18n="catEducation">Education</strong><small data-i18n="catEducationDesc">Scholarships & study</small></button>
+        <button class="category-card" data-category="Agriculture"><span>⌁</span><strong data-i18n="catAgriculture">Agriculture</strong><small data-i18n="catAgricultureDesc">Support for farmers</small></button>
+        <button class="category-card" data-category="Health"><span>♡</span><strong data-i18n="catHealth">Health</strong><small data-i18n="catHealthDesc">Care & wellbeing</small></button>
+        <button class="category-card" data-category="Business"><span>▤</span><strong data-i18n="catBusiness">Business</strong><small data-i18n="catBusinessDesc">Enterprise support</small></button>
+        <button class="category-card" data-category="Pension"><span>◷</span><strong data-i18n="catPension">Pension</strong><small data-i18n="catPensionDesc">Senior citizen support</small></button>
+        <button class="category-card" data-category="Housing"><span>⌂</span><strong data-i18n="catHousing">Housing</strong><small data-i18n="catHousingDesc">Housing assistance</small></button>
+        <button class="category-card" data-category="Employment"><span>↗</span><strong data-i18n="catEmployment">Employment</strong><small data-i18n="catEmploymentDesc">Work and livelihood</small></button>
+        <button class="category-card" data-category="Social Welfare"><span>◇</span><strong data-i18n="catSocialWelfare">Social welfare</strong><small data-i18n="catSocialWelfareDesc">Public support programmes</small></button>
+      </div>
+    </section>
+
+    <section id="explore" class="explore-section">
+      <div class="content-width">
+        <div class="section-heading">
+          <div><span class="eyebrow" data-i18n="exploreEyebrow">SCHEME EXPLORER</span><h2 data-i18n="exploreTitle">Find information that fits</h2><p data-i18n="exploreDescription">Search a small starter catalogue. Open each official source to confirm current details.</p></div>
+          <span class="catalogue-count" id="catalogue-count">Loading schemes…</span>
+        </div>
+        <form id="scheme-search" class="search-panel">
+          <label class="search-box"><span aria-hidden="true">⌕</span><input id="scheme-query" type="search" maxlength="100" placeholder="Search scholarships, farmers, scheme names…" aria-label="Search schemes" data-i18n-placeholder="searchPlaceholder" data-i18n-aria="searchSchemes"></label>
+          <label class="filter-label"><span data-i18n="filterTarget">Beneficiary</span>
+            <input id="target-filter" type="search" maxlength="80" placeholder="Student, farmer…" data-i18n-placeholder="targetPlaceholder">
+          </label>
+          <label class="filter-label"><span data-i18n="filterCategory">Category</span>
+            <select id="category-filter"><option value="" data-i18n="allCategories">All categories</option></select>
+          </label>
+          <label class="filter-label"><span data-i18n="filterGovernment">Government</span>
+            <select id="level-filter"><option value="" data-i18n="allLevels">All levels</option></select>
+          </label>
+          <button class="button button-primary search-button" type="submit" data-i18n="search">Search</button>
+        </form>
+        <div id="scheme-results" class="scheme-grid" aria-live="polite"></div>
+        <div class="compare-controls">
+          <span id="compare-count" data-i18n="compareHint">Select 2–3 schemes to compare.</span>
+          <button id="compare-button" class="button button-secondary" type="button" disabled data-i18n="compareSelected">Compare selected</button>
+        </div>
+        <p id="scheme-empty" class="empty-state" hidden data-i18n="noSchemes">No matching schemes found. Try a broader search or check the official myScheme portal.</p>
+      </div>
+    </section>
+
+    <section id="assistant" class="assistant-section content-width">
+      <div class="assistant-intro">
+        <span class="eyebrow" data-i18n="assistantEyebrow">JANSAHAYAK ASSISTANT</span>
+        <h2><span data-i18n="assistantTitle">Have a question?</span><br><span data-i18n="assistantSubtitle">Let’s find a starting point.</span></h2>
+        <p data-i18n="assistantDescription">Ask in English or Hindi. Answers use the local scheme catalogue. If a detail is missing, the assistant will say so.</p>
+        <div class="privacy-note"><span aria-hidden="true">◇</span><span><strong data-i18n="privacyTitle">Your answers stay in this session.</strong><br><span data-i18n="privacyDescription">Chat is not saved by this app. Don’t enter Aadhaar, bank details, OTPs, or passwords.</span></span></div>
+      </div>
+      <div class="chat-card">
+        <div class="chat-header"><div class="assistant-avatar">JS</div><div><strong>JanSahayak</strong><small><span class="status-dot"></span> <span data-i18n="ready">Ready to help</span></small></div><button id="clear-chat" class="icon-button" type="button" aria-label="Clear conversation" title="Clear conversation" data-i18n-aria="clearConversation" data-i18n-title="clearConversation">↺</button></div>
+        <div id="chat-messages" class="chat-messages" aria-live="polite" aria-label="Conversation" data-i18n-aria="conversation">
+          <div class="message assistant-message"><p data-i18n="greeting">Namaste! Tell me what you need help with—scholarship, farming, pension, or something else. I’ll share what’s in the catalogue and link to its official source.</p></div>
+        </div>
+        <div class="suggestions" aria-label="Suggested questions" data-i18n-aria="suggestions">
+          <button type="button" data-prompt="Mujhe scholarship chahiye" data-i18n="suggestScholarship">I need a scholarship</button>
+          <button type="button" data-prompt="Kheti ke liye kaunsi schemes hain?" data-i18n="suggestFarmers">Schemes for farmers</button>
+          <button type="button" data-prompt="कौन से दस्तावेज़ चाहिए?" data-i18n="suggestDocuments">Documents I may need</button>
+        </div>
+        <form id="chat-form" class="chat-form">
+          <button id="mic-button" class="icon-button mic-button" type="button" aria-label="Ask by voice" title="Ask by voice" data-i18n-aria="askByVoice" data-i18n-title="askByVoice">⌁</button>
+          <label class="sr-only" for="chat-input" data-i18n="typeQuestion">Type your question</label>
+          <input id="chat-input" type="text" maxlength="1200" autocomplete="off" placeholder="Type your question…" data-i18n-placeholder="chatPlaceholder">
+          <button id="send-button" class="send-button" type="submit" aria-label="Send message" data-i18n-aria="sendMessage">↑</button>
+        </form>
+        <div class="chat-tools"><span id="voice-status" role="status" data-i18n="voiceHint">Voice input depends on browser support and microphone permission.</span><button id="stop-speech" type="button" class="text-button" disabled data-i18n="stopSpeaking">Stop speaking</button></div>
+      </div>
+    </section>
+
+    <section id="dashboard" class="dashboard-section content-width">
+      <div class="section-heading">
+        <div><span class="eyebrow" data-i18n="dashboardEyebrow">YOUR PRIVATE WORKSPACE</span><h2 data-i18n="dashboardTitle">My dashboard</h2><p data-i18n="dashboardIntro">Saved and recently viewed schemes stay in this browser.</p></div>
+      </div>
+      <div class="dashboard-grid">
+        <article class="tool-card"><h3 data-i18n="savedSchemes">Saved schemes</h3><div id="saved-schemes" class="dashboard-list"></div></article>
+        <article class="tool-card"><h3 data-i18n="recommendedSchemes">Recommended schemes</h3><div id="recommended-schemes" class="dashboard-list"></div></article>
+        <article class="tool-card"><h3 data-i18n="recentSchemes">Recently viewed</h3><div id="recent-schemes" class="dashboard-list"></div></article>
+        <article class="tool-card"><h3 data-i18n="applicationTracker">Application tracker</h3>
+          <p class="tool-note" data-i18n="trackerNote">Enter only the scheme and a status. Do not enter application numbers or personal details.</p>
+          <form id="application-form" class="stack-form">
+            <label><span data-i18n="schemeLabel">Scheme</span><select id="application-scheme" required></select></label>
+            <label><span data-i18n="statusLabel">Status</span><select id="application-status"><option data-i18n="applicationStatusApplicationSubmitted">Application Submitted</option><option data-i18n="applicationStatusUnderVerification">Under Verification</option><option data-i18n="applicationStatusApproved">Approved</option><option data-i18n="applicationStatusRejected">Rejected</option></select></label>
+            <button type="submit" class="button button-primary" data-i18n="addApplication">Add application</button>
+          </form>
+          <div id="application-list" class="dashboard-list" aria-live="polite"></div>
+          <p class="tool-note" data-i18n="trackerDisclaimer">Statuses are entered manually; this app does not connect to government application systems.</p>
+        </article>
+        <article class="tool-card"><h3 data-i18n="readinessSummary">Readiness & eligibility</h3><div id="readiness-summary" class="dashboard-list"></div><p class="tool-note" data-i18n="localStorageNote">Checklist and summary data stay in this browser.</p></article>
+      </div>
+    </section>
+
+    <section id="services" class="services-section">
+      <div class="content-width">
+        <div class="section-heading"><div><span class="eyebrow" data-i18n="servicesEyebrow">PRACTICAL CITIZEN TOOLS</span><h2 data-i18n="servicesTitle">Prepare safely, one step at a time</h2><p data-i18n="servicesIntro">These helpers do not submit applications, verify documents, or contact authorities.</p></div></div>
+        <div class="services-grid">
+          <article class="tool-card"><h3 data-i18n="complaintTitle">Complaint draft assistant</h3><form id="complaint-form" class="stack-form">
+            <label><span data-i18n="complaintTopic">Issue type (optional)</span><input name="topic" maxlength="120" placeholder="Scholarship payment, pension…" data-i18n-placeholder="complaintTopicPlaceholder"></label>
+            <label><span data-i18n="complaintDetails">Describe the issue</span><textarea name="message" maxlength="3000" required placeholder="Do not include Aadhaar, bank details, OTPs, or passwords." data-i18n-placeholder="complaintDetailsPlaceholder"></textarea></label>
+            <button class="button button-primary" type="submit" data-i18n="generateDraft">Generate draft</button>
+          </form><div id="complaint-result" class="tool-result" aria-live="polite"></div></article>
+          <article class="tool-card"><h3 data-i18n="documentTitle">Document scanner (limited)</h3><p class="tool-note" data-i18n="documentLimit">Upload is optional and temporary. OCR is not configured; no document is saved or verified.</p><form id="document-form" class="stack-form">
+            <label><span data-i18n="chooseDocument">Choose PDF, PNG, or JPEG (max 5 MB)</span><input name="file" type="file" accept=".pdf,.png,.jpg,.jpeg,application/pdf,image/png,image/jpeg" required></label>
+            <button class="button button-primary" type="submit" data-i18n="analyzeDocument">Check file</button>
+          </form><div id="document-result" class="tool-result" aria-live="polite"></div></article>
+          <article class="tool-card"><h3 data-i18n="fraudTitle">Suspicious link check</h3><form id="fraud-form" class="stack-form">
+            <label><span data-i18n="websiteUrl">Website URL</span><input name="url" type="url" maxlength="2048" required placeholder="https://example.gov.in"></label>
+            <label><span data-i18n="messageText">Message text (optional)</span><textarea name="message" maxlength="2000" placeholder="Paste text only; remove personal details." data-i18n-placeholder="messagePlaceholder"></textarea></label>
+            <button class="button button-primary" type="submit" data-i18n="checkLink">Check link</button>
+          </form><div id="fraud-result" class="tool-result" aria-live="polite"></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="how-section">
+      <div class="content-width">
+        <div class="section-heading centered"><span class="eyebrow" data-i18n="howEyebrow">SIMPLE. TRANSPARENT. USEFUL.</span><h2 data-i18n="howTitle">From a question to a next step</h2></div>
+        <div class="how-grid">
+          <article><span class="how-icon">01</span><h3 data-i18n="howStep1Title">Tell us what you need</h3><p data-i18n="howStep1">Search the catalogue or ask a question in text or voice where supported.</p></article>
+          <article><span class="how-icon">02</span><h3 data-i18n="howStep2Title">Review what’s known</h3><p data-i18n="howStep2">See recorded conditions and clear notices wherever scheme details are incomplete.</p></article>
+          <article><span class="how-icon">03</span><h3 data-i18n="howStep3Title">Verify and prepare</h3><p data-i18n="howStep3">Follow official links and prepare questions before you apply through the official channel.</p></article>
+        </div>
+        <div class="trust-banner"><span aria-hidden="true">ⓘ</span><p><strong data-i18n="important">Important:</strong> <span data-i18n="trustNotice">This prototype does not determine official eligibility or submit applications. Always confirm current rules, documents, dates and application steps with the scheme authority.</span></p></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="content-width footer-inner"><a class="brand footer-brand" href="/"><span class="brand-mark">JS</span><span>JanSahayak <strong>AI</strong></span></a><p data-i18n="footerNotice">An independent student prototype · Not affiliated with the Government of India</p><a href="https://www.myscheme.gov.in/" target="_blank" rel="noopener noreferrer" data-i18n="mySchemeLink">Official myScheme portal ↗</a></div></footer>
+
+  <dialog id="scheme-dialog" class="scheme-dialog" aria-labelledby="dialog-title">
+    <div id="scheme-detail"></div>
+    <button id="close-dialog" class="dialog-close" type="button" aria-label="Close scheme details">×</button>
+  </dialog>
+  <dialog id="compare-dialog" class="scheme-dialog comparison-dialog" aria-labelledby="compare-title">
+    <h2 id="compare-title" data-i18n="comparisonTitle">Scheme comparison</h2>
+    <div id="comparison-result"></div>
+    <button id="close-compare" class="dialog-close" type="button" aria-label="Close comparison">×</button>
+  </dialog>
+  <script defer src="/js/i18n.js"></script>
+  <script defer src="/js/app.js"></script>
+  <script defer src="/js/schemes.js"></script>
+  <script defer src="/js/chat.js"></script>
+  <script defer src="/js/voice.js"></script>
+  <script defer src="/js/tools.js"></script>
+</body>
+</html>
